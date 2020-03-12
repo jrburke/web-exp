@@ -1,6 +1,8 @@
 const outputNode = document.getElementById("output");
 const inputNode = document.getElementById("input");
 const buttonNode = document.getElementById("inputButton");
+const printNode = document.getElementById("printButton");
+
 const key = "my-storage-key";
 
 function log(msg) {
@@ -20,6 +22,10 @@ buttonNode.addEventListener("click", function() {
   setValue(value);
   log("Session value now " + getValue());
 });
+
+printNode.addEventListener("click", function() {
+    log("Session value is currently " + getValue());
+  });
 
 const dateString = new Intl.DateTimeFormat("en-US", {
   hour: "numeric",
