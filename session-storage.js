@@ -18,9 +18,18 @@ function setValue(value) {
 buttonNode.addEventListener("click", function() {
   const value = inputNode.value.trim();
   setValue(value);
-  log('Session value now ' + getValue());
+  log("Session value now " + getValue());
 });
 
-log("Script started at " + new Date());
+const dateString = new Intl.DateTimeFormat("en-US", {
+  hour: "numeric",
+  minute: "numeric",
+  second: "numeric",
+  timeZoneName: "short"
+}).format(new Date());
 
+// Log when we start
+log("Script started at " + dateString);
+
+// Show current value
 log("Current session value: " + getValue());
